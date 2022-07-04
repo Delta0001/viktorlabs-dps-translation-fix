@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "viktorlab DPS Fix",
+    "version": "1.0.0",
+    "version_name": "1.0.0",
+    "description": "Fix to viktorlab.cn/akdata/dps/ to properly assign the english name since Google Translate can't fix it",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://viktorlab.cn/akdata/dps/"
+            ],
+            "run_at": "document_idle",
+            "js": [
+                "main.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["script.js"],
+        "matches": ["<all_urls>"]
+    }]
+}

@@ -1,4 +1,4 @@
 # viktorlabs-dps-translation-fix
-Fix to viktorlab.cn/akdata/dps/ to properly assign the english name since Google Translate can't fix it
+This extension overwrites victorlab's functions to print the ``appellation`` (English) value instead of ``name`` (Chinese).
 
 Feel free to contribute to translate the rest of the page!
