@@ -64,7 +64,7 @@ class VikScraper():
          self.driver.find_element(By.CSS_SELECTOR, "figure > img").click()
          break
       except NoSuchElementException:
-        print("Something went wrong. Retry: " + retry)
+        print("Warning: Something went wrong. Retry: " + retry)
         retry = retry + 1
 
     # wait for characters to load
@@ -112,9 +112,9 @@ class VikScraper():
         break
 
       # grab period, skill dps, average dps
-      self.result["skill" + str(skill_level) + "_period_"] = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(2) > .dps__period").text
-      self.result["skill" + str(skill_level) + "_sk_dps_"] = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(2) > .dps__s_dps").text
-      self.result["skill" + str(skill_level) + "_av_dps_"] = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(2) > .dps__g_dps").text
+      self.result["skill" + str(skill_level+1) + "_period_"] = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(2) > .dps__period").text
+      self.result["skill" + str(skill_level+1) + "_sk_dps_"] = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(2) > .dps__s_dps").text
+      self.result["skill" + str(skill_level+1) + "_av_dps_"] = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(2) > .dps__g_dps").text
 
     return self.result
 
